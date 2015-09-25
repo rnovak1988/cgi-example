@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Example CGI Form </title>
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap-theme.min.css" />
+		<script type="text/javascript" src="/js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+		<style type="text/css">
+			form input.form-control, form div.btn-group, div.panel {
+				margin-top: 20px;
+			}
+		</style>
+		<script type="text/javascript">
+			
+			window.formSubmit = function() {
+				
+				var forms = document.getElementsByTagName("form");
+
+				forms[0].submit();
+
+			};
+
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<div class="panel-title">Example Form</div>
+				</div>
+				<div class="panel-body">
+					<form action="/cgi-bin/request.cgi" method="POST">
+						<input name="fname" type="text" class="form-control" placeholder="First Name" />
+						<input name="lname" type="text" class="form-control" placeholder="Last Name" />
+						<input name="address1" type="text" class="form-control" placeholder="Address1" />
+						<input name="address2" type="text" class="form-control" placeholder="Address 2" />
+						<input name="city" type="text" class="form-control" placeholder="City" />
+						<input name="state" type="text" class="form-control" placeholder="State" />
+						
+						<div class="btn-group btn-group-justified" role="group">
+							<div class="btn btn-success" onclick="formSubmit()">
+								Submit
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
